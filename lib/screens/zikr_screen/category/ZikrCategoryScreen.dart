@@ -52,7 +52,7 @@ class _ZikrCategoryScreenState extends State<ZikrCategoryScreen> {
                           alarmSet: '08:00',
                         ) //Text(data[i].title),
                         ),
-                  ), 
+                  ),
                 ),
                 itemCount: data.length,
               );
