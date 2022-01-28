@@ -48,9 +48,9 @@ class _ZikrCategoryScreenState extends State<ZikrCategoryScreen> {
                         child: ZikrConditionRow(
                           isPreferd: false,
                           title: data[i].title,
-                          hasAlarm: (data[i].id == 27 && data[i].id == 28 && data[i].id == 1),
-                          alarmSet: '08:00',
-                        ) //Text(data[i].title),
+                          hasAlarm: (data[i].id == 27 || data[i].id == 28 || data[i].id == 1),
+                          //alarmSet: '08:00',
+                        ), //Text(data[i].title),
                         ),
                   ),
                 ),
@@ -110,7 +110,7 @@ class ZikrConditionRow extends StatelessWidget {
       ))
       ;
     }
-    else {
+    else if (this.hasAlarm && this.alarmSet != null){
       children.add(Expanded(
         flex: 3,
         child: Column(
