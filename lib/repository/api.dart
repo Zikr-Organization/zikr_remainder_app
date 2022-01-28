@@ -20,9 +20,9 @@ Future<List<ZikrCategory>> get allZikrCategories async {
       .toList();
 }
 
-Future<List<Zikr>> getZikrList(int id) async {
+Future<List<ZikrCondition>> getZikrList(int id) async {
   final data = await getDataFromAPI(HISNAL_MUSLIM_API_BASE + '$id.json');
-  return ((data.values.first as List<dynamic>).map((e) => Zikr.fromJson(e)).toList());
+  return ((data.values.first as List<dynamic>).map((e) => ZikrCondition.fromJson(e)).toList());
 }
 
 Future<Map<String, dynamic>> getDataFromAPI(String url) async {

@@ -5,10 +5,14 @@ class ChannelsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Text('Zikr Screen'),
-      ),
+    return MaterialApp(
+        title: 'Custom Zikr',
+        home: Container(
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage("images/vector-3-background.jpg"),
+                  fit: BoxFit.cover)),
+        )
     );
   }
 }

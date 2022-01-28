@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:zikr_remainder_app/screens/zikr_screen/category/ZikrCategoryScreen.dart';
+import 'package:zikr_remainder_app/screens/zikr_screen/category/zikr_category_screen.dart';
+import 'package:zikr_remainder_app/screens/azker_screen/azker_screen.dart';
+import 'package:zikr_remainder_app/screens/channels_screen/channels_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -18,6 +20,7 @@ class HomeScreen extends StatelessWidget {
             color: Color(0xff040722),
             foregroundColor: Color(0xff8b7b52)
           ),
+          //colorScheme: ColorScheme(secondary: Color(0xff8b7b52), brightness: ),
           tabBarTheme: const TabBarTheme(
                 //backgroundColor: Color(0xff040722),
                 labelColor: Color(0xff8b7b52),
@@ -26,6 +29,7 @@ class HomeScreen extends StatelessWidget {
                     borderSide: BorderSide(color: Color(0xff8b7b52)),
                 ),
             ),
+          dialogTheme: const DialogTheme(backgroundColor: Color(0xff314879)),
 
 
           // Define the default font family.
@@ -55,8 +59,8 @@ class HomeScreen extends StatelessWidget {
         body: const TabBarView(
           children: [
             ZikrCategoryScreen(),
-            Icon(Icons.directions_transit),
-            Icon(Icons.directions_bike),
+            AzkerScreen(),
+            ChannelsScreen(),
           ],
         ),
       ),

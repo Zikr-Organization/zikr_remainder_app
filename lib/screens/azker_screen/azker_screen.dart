@@ -5,10 +5,14 @@ class AzkerScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text('Zikr Screen'),
-      ),
+    return MaterialApp(
+        title: 'Custom Zikr',
+        home: Container(
+        decoration: BoxDecoration(
+        image: DecorationImage(
+        image: AssetImage("images/vector-2-background.jpg"),
+    fit: BoxFit.cover)),
+        )
     );
   }
 }
