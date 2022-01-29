@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 class ZikrConditionRow extends StatelessWidget {
   const ZikrConditionRow(
-      {required this.isPreferd,
+      {required this.context,
+        required this.isPreferd,
         required this.title,
         required this.hasAlarm,
         this.alarmSet = null,
         required this.isPreferedPressed,
         required this.isAlarmPressed});
+  final BuildContext context;
   final bool isPreferd;
   final String title;
   final bool hasAlarm;
@@ -33,11 +35,7 @@ class ZikrConditionRow extends StatelessWidget {
         flex: 16,
         child: Text(
           title,
-          style: TextStyle(
-              fontSize: 17.0,
-              fontWeight: FontWeight.w500,
-              color: Colors.white,
-              decoration: TextDecoration.none),
+          style: Theme.of(context).textTheme.headline6,
         ),
       ),
     ];

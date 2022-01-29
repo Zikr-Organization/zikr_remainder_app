@@ -19,6 +19,7 @@ class HomeScreen extends StatelessWidget {
           appBarTheme: const AppBarTheme(
             color: Color(0xff040722),
             foregroundColor: Color(0xff8b7b52)
+
           ),
           //colorScheme: ColorScheme(secondary: Color(0xff8b7b52), brightness: ),
           tabBarTheme: const TabBarTheme(
@@ -33,15 +34,20 @@ class HomeScreen extends StatelessWidget {
 
 
           // Define the default font family.
-        //  fontFamily: 'Georgia',
+          fontFamily: 'AbrilFatface',
 
           // Define the default `TextTheme`. Use this to specify the default
           // text styling for headlines, titles, bodies of text, and more.
-     /*     textTheme: const TextTheme(
-            headline1: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold, color: Color(0xff544721)),
-            headline6: TextStyle(fontSize: 36.0, fontWeight: FontWeight.bold, color: Color(0xff8b7b52)),
-            bodyText2: TextStyle(fontSize: 14.0, fontFamily: 'Hind', color: Color(0xffd5c296)),
-          ),*/
+          textTheme: const TextTheme(
+           // headline1: TextStyle(fontSize: 96.0, fontWeight: FontWeight.bold, color: Color(0xff544721)),
+          //  headline2: TextStyle(fontSize: 60.0, fontWeight: FontWeight.bold, color: Color(0xff544721)),
+          //  headline3: TextStyle(fontSize: 48.0, fontWeight: FontWeight.bold, color: Color(0xff8b7b52)),
+            headline4: TextStyle(fontSize: 34.0, fontWeight: FontWeight.bold, color: Color(0xff544721)),
+            headline5: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold, color: Color(0xff544721)),
+            headline6: TextStyle(fontSize: 20.0, fontWeight: FontWeight.w500, color: Colors.white),//20.0
+            bodyText1: TextStyle(fontSize: 17.0, fontFamily: 'Amiri', color: Colors.white),
+            bodyText2: TextStyle(fontSize: 15.0, fontFamily: 'Amiri', color: Color(0xffd5c296)),
+          ),
         ),
       home: DefaultTabController(
       length: 3,
@@ -49,12 +55,12 @@ class HomeScreen extends StatelessWidget {
         appBar: AppBar(
           bottom: const TabBar(
             tabs: [
-              Tab(icon: Icon(Icons.book)),
-              Tab(icon: Icon(Icons.edit)),
+              Tab(icon: Icon(Icons.book_rounded)),
+              Tab(icon: Icon(Icons.edit_rounded)),
               Tab(icon: Icon(Icons.directions_bike)),
             ],
           ),
-          title: const Text('Zikr Reminder'),
+          title: const Text('Zikr Reminder',style: TextStyle(fontSize: 34.0, fontWeight: FontWeight.bold, color: Color(0xff8b7b52))),
         ),
         body: const TabBarView(
           children: [

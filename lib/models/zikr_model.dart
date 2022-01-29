@@ -1,4 +1,6 @@
-class ZikrCondition {
+import 'dart:convert';
+
+class ZikrHadeeth {
   int id;
   String arabicText;
   String francoArabic;
@@ -6,9 +8,9 @@ class ZikrCondition {
   int repeat;
   String audio;
 
-  ZikrCondition.fromJson(Map<String, dynamic> data)
+  ZikrHadeeth.fromJson(Map<String, dynamic> data)
       : id = data['ID'],
-        arabicText = data['ARABIC_TEXT'],
+        arabicText = data['ARABIC_TEXT'],//utf8.decode(data['ARABIC_TEXT']),
         francoArabic = data['LANGUAGE_ARABIC_TRANSLATED_TEXT'],
         translation = data['TRANSLATED_TEXT'],
         repeat = data['REPEAT'],
@@ -16,6 +18,6 @@ class ZikrCondition {
 
   @override
   String toString() {
-    return 'ZikrCondition{id: $id, arabicText: $arabicText, francoArabic: $francoArabic, translation: $translation, repeat: $repeat, audio:$audio}';
+    return 'ZikrHadeeth{id: $id, arabicText: $arabicText, francoArabic: $francoArabic, translation: $translation, repeat: $repeat, audio:$audio}';
   }
 }

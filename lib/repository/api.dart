@@ -20,12 +20,23 @@ Future<List<ZikrCategory>> get allZikrCategories async {
       .toList();
 }
 
-Future<List<ZikrCondition>> getZikrList(int id) async {
+Future<List<ZikrHadeeth>> getZikrList(int id) async {
   final data = await getDataFromAPI(HISNAL_MUSLIM_API_BASE + '$id.json');
-  return ((data.values.first as List<dynamic>).map((e) => ZikrCondition.fromJson(e)).toList());
+  return ((data.values.first as List<dynamic>).map((e) => ZikrHadeeth.fromJson(e)).toList());
 }
 
 Future<Map<String, dynamic>> getDataFromAPI(String url) async {
-  final res = await http.Client().get(Uri.parse(url));
-  return jsonDecode(res.body.replaceAll('ï»¿', ''));
+  if (url == HISNAL_MUSLIM_API_BASE + 'husn_en.json'){
+    final res = await http.Client().get(Uri.parse(url));
+
+    return jsonDecode(res.body.replaceAll('ï»¿', ''));
+  }
+  else{
+    final res = await http.Client().get(Uri.parse(url));
+    ///first decode the response to utf-8 string
+    var myDataString = utf8.decode(res.bodyBytes);
+    ///obtain json from string
+    var myDataJson = jsonDecode(myDataString);
+    return myDataJson;
+  }
 }

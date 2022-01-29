@@ -8,7 +8,7 @@ class ZikrCategory {
 
   ZikrCategory.fromJson(Map<String, dynamic>data): id = data['ID'], title=data['TITLE'], text=data['TEXT'];
 
-  Future<List<ZikrCondition>> get zikrList async{
+  Future<List<ZikrHadeeth>> get zikrList async{
     return getZikrList(id);
   }
 
