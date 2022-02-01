@@ -18,7 +18,11 @@ class _ZikrCategoryScreenState extends State<ZikrCategoryScreen> {
   var selectedTimes = Map<int,TimeOfDay>(); //TODO because morning and evening will be splitted
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Scaffold(
+        appBar: AppBar(
+        title: Text("Hisn-Ul-Muslim", textAlign: TextAlign.center,),
+    ),
+    body: Container(
         decoration: BoxDecoration(
             image: DecorationImage(
                 image: AssetImage("images/vector-1-background.jpg"),
@@ -52,7 +56,8 @@ class _ZikrCategoryScreenState extends State<ZikrCategoryScreen> {
                           isPreferedArray[i] = !isPreferedArray[i];
                         });
                       },
-                      hasAlarm: (data[i].id == 27 ||
+                      hasAlarm: (data[i].id == 270 ||
+                          data[i].id == 271 ||
                           data[i].id == 28 ||
                           data[i].id == 1),
                       isAlarmPressed: () {
@@ -68,7 +73,7 @@ class _ZikrCategoryScreenState extends State<ZikrCategoryScreen> {
             );
           },
         ),
-        // ),
+      ),
     );
   }
   _selectTime(BuildContext context, int index) async {

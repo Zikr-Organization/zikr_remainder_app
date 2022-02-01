@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:zikr_remainder_app/screens/zikr_screen/category/zikr_category_screen.dart';
-import 'package:zikr_remainder_app/screens/azker_screen/azker_screen.dart';
+import 'package:zikr_remainder_app/screens/custom_zikr_screen/custom_zikr_screen.dart';
 import 'package:zikr_remainder_app/screens/channels_screen/channels_screen.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -18,7 +18,7 @@ class HomeScreen extends StatelessWidget {
           primaryColorLight: Color(0xff314879),
           appBarTheme: const AppBarTheme(
             color: Color(0xff040722),
-            foregroundColor: Color(0xff8b7b52)
+            foregroundColor: Color(0xff8b7b52),
 
           ),
           //colorScheme: ColorScheme(secondary: Color(0xff8b7b52), brightness: ),
@@ -62,10 +62,10 @@ class HomeScreen extends StatelessWidget {
           ),
           title: const Text('Zikr Reminder',style: TextStyle(fontSize: 34.0, fontWeight: FontWeight.bold, color: Color(0xff8b7b52))),
         ),
-        body: const TabBarView(
+        body:  TabBarView(
           children: [
             ZikrCategoryScreen(),
-            AzkerScreen(),
+            CustomZikrScreen(),
             ChannelsScreen(),
           ],
         ),
